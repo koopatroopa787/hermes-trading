@@ -1,0 +1,165 @@
+{
+  "updated_at": "2026-06-11T06:03:15.789565",
+  "candidates": [
+    {
+      "symbol": "SMCI",
+      "close": 29.26,
+      "change_pct": -27.97,
+      "dollar_volume_B": 0.23,
+      "atr_proxy": 18.08,
+      "score": 14.8948
+    },
+    {
+      "symbol": "SOXL",
+      "close": 180.06,
+      "change_pct": -10.7,
+      "dollar_volume_B": 0.26,
+      "atr_proxy": 17.6,
+      "score": 7.9048
+    },
+    {
+      "symbol": "LCID",
+      "close": 4.71,
+      "change_pct": -8.19,
+      "dollar_volume_B": 0.0,
+      "atr_proxy": 7.41,
+      "score": 4.7575
+    },
+    {
+      "symbol": "LABU",
+      "close": 160.1,
+      "change_pct": -5.74,
+      "dollar_volume_B": 0.0,
+      "atr_proxy": 10.41,
+      "score": 4.3773
+    },
+    {
+      "symbol": "TECL",
+      "close": 190.46,
+      "change_pct": -6.11,
+      "dollar_volume_B": 0.0,
+      "atr_proxy": 9.49,
+      "score": 4.3447
+    },
+    {
+      "symbol": "FNGU",
+      "close": 25.04,
+      "change_pct": -7.17,
+      "dollar_volume_B": 0.0,
+      "atr_proxy": 7.01,
+      "score": 4.2713
+    },
+    {
+      "symbol": "SQQQ",
+      "close": 45.25,
+      "change_pct": 6.07,
+      "dollar_volume_B": 0.1,
+      "atr_proxy": 7.69,
+      "score": 4.0073
+    },
+    {
+      "symbol": "TQQQ",
+      "close": 69.33,
+      "change_pct": -5.92,
+      "dollar_volume_B": 0.08,
+      "atr_proxy": 7.71,
+      "score": 3.9443
+    },
+    {
+      "symbol": "RIVN",
+      "close": 14.77,
+      "change_pct": -5.98,
+      "dollar_volume_B": 0.02,
+      "atr_proxy": 7.32,
+      "score": 3.865
+    },
+    {
+      "symbol": "ARM",
+      "close": 307.38,
+      "change_pct": -5.28,
+      "dollar_volume_B": 0.07,
+      "atr_proxy": 8.53,
+      "score": 3.8475
+    },
+    {
+      "symbol": "WEBL",
+      "close": 22.9,
+      "change_pct": -5.37,
+      "dollar_volume_B": 0.0,
+      "atr_proxy": 6.1,
+      "score": 3.3679
+    },
+    {
+      "symbol": "AMD",
+      "close": 452.17,
+      "change_pct": -4.91,
+      "dollar_volume_B": 0.29,
+      "atr_proxy": 6.04,
+      "score": 3.2878
+    },
+    {
+      "symbol": "ARQQ",
+      "close": 13.08,
+      "change_pct": 4.98,
+      "dollar_volume_B": 0.0,
+      "atr_proxy": 6.1,
+      "score": 3.2103
+    },
+    {
+      "symbol": "DKNG",
+      "close": 28.79,
+      "change_pct": 4.33,
+      "dollar_volume_B": 0.05,
+      "atr_proxy": 7.12,
+      "score": 3.1754
+    },
+    {
+      "symbol": "HOOD",
+      "close": 86.32,
+      "change_pct": 3.04,
+      "dollar_volume_B": 0.1,
+      "atr_proxy": 8.63,
+      "score": 2.982
+    },
+    {
+      "symbol": "SPXL",
+      "close": 249.58,
+      "change_pct": -4.69,
+      "dollar_volume_B": 0.01,
+      "atr_proxy": 5.03,
+      "score": 2.8875
+    },
+    {
+      "symbol": "DUOL",
+      "close": 121.96,
+      "change_pct": 3.5,
+      "dollar_volume_B": 0.01,
+      "atr_proxy": 7.1,
+      "score": 2.8232
+    },
+    {
+      "symbol": "SOUN",
+      "close": 6.75,
+      "change_pct": -3.85,
+      "dollar_volume_B": 0.0,
+      "atr_proxy": 5.84,
+      "score": 2.7079
+    },
+    {
+      "symbol": "NVDA",
+      "close": 200.41,
+      "change_pct": -3.74,
+      "dollar_volume_B": 0.98,
+      "atr_proxy": 3.48,
+      "score": 2.5872
+    },
+    {
+      "symbol": "SOFI",
+      "close": 15.87,
+      "change_pct": -3.7,
+      "dollar_volume_B": 0.03,
+      "atr_proxy": 5.25,
+      "score": 2.5424
+    }
+  ]
+}

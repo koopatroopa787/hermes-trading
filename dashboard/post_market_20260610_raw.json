@@ -1,0 +1,603 @@
+{
+  "hermes": {
+    "name": "Hermes",
+    "strategy": "VWAP Mean Reversion v3",
+    "start_capital": 100000.0,
+    "equity": 82517.75,
+    "cash": 82517.75,
+    "buying_power": 330071.0,
+    "positions": [],
+    "today_trades": [
+      {
+        "timestamp": "2026-06-10 15:40:00",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 94,
+        "price": 164.74,
+        "pnl": -490.78,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 15:52:00",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 94,
+        "price": 162.56,
+        "pnl": -695.7,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 18:47:00",
+        "symbol": "CRWD",
+        "side": "SELL",
+        "qty": 23,
+        "price": 649.32,
+        "pnl": -15.41,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 18:49:01",
+        "symbol": "CRWD",
+        "side": "SELL",
+        "qty": 46,
+        "price": 649.68,
+        "pnl": -0.23,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 18:52:00",
+        "symbol": "CRWD",
+        "side": "SELL",
+        "qty": 23,
+        "price": 649.28,
+        "pnl": -9.31,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 18:52:01",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 176,
+        "price": 87.81,
+        "pnl": 19.36,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 18:54:00",
+        "symbol": "CRWD",
+        "side": "SELL",
+        "qty": 17,
+        "price": 649.09,
+        "pnl": -10.2,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:25:01",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 176,
+        "price": 87.03,
+        "pnl": -5.77,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:29:00",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 353,
+        "price": 87.05,
+        "pnl": 14.01,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:00",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 177,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:00",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 94,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 81,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:01",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 37,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:01",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 94,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:01",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 81,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:01",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 37,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:01",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 94,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:01",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 81,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:02",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 7,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:02",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 38,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:02",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 61,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:03",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 6,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:03",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 25,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:03",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 27,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:03",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 6,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:03",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 25,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:04",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 27,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:04",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 5,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:04",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 18,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:04",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 21,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:04",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 5,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:04",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 18,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:04",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 21,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:05",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 5,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:05",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 18,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:50:05",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 21,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:51:00",
+        "symbol": "HOOD",
+        "side": "SELL",
+        "qty": 5,
+        "price": 87.01,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:51:00",
+        "symbol": "LABU",
+        "side": "SELL",
+        "qty": 15,
+        "price": 163.61,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:51:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 18,
+        "price": 184.89,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:52:02",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 9,
+        "price": 185.29,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:53:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 9,
+        "price": 185.29,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:54:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 3,
+        "price": 182.48,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:54:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 3,
+        "price": 182.48,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:54:01",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 3,
+        "price": 182.48,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:54:01",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 182.48,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:54:01",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 182.48,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:54:01",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 182.48,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:55:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 182.48,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:57:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 180.44,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:57:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 180.44,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:57:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 180.44,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:57:01",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 180.44,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:59:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 180.82,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:59:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 180.82,
+        "pnl": 0.0,
+        "regime": null
+      },
+      {
+        "timestamp": "2026-06-10 19:59:00",
+        "symbol": "SOXL",
+        "side": "SELL",
+        "qty": 1,
+        "price": 180.82,
+        "pnl": 0.0,
+        "regime": null
+      }
+    ],
+    "today_pnl": -1831.76,
+    "stats": {
+      "today_trades": 55,
+      "today_wins": 2,
+      "today_losses": 7,
+      "today_win_rate": 3.6,
+      "today_avg_win": 16.68,
+      "today_avg_loss": -175.34,
+      "today_biggest_win": 19.36,
+      "today_biggest_loss": -695.7
+    },
+    "day_open_equity": 84349.51,
+    "day_close_equity": 82517.75,
+    "errors": [],
+    "today_trade_pnl": -1194.03,
+    "all_time": {
+      "total_trades": 55,
+      "total_wins": 2,
+      "total_losses": 7,
+      "win_rate": 3.6,
+      "total_pnl": -1194.03,
+      "equity_change": -17482.25
+    }
+  },
+  "wq": {
+    "name": "WQ Brain",
+    "strategy": "ORB Momentum v25",
+    "start_capital": 100000.0,
+    "equity": 103076.86,
+    "cash": 104691.9,
+    "buying_power": 410369.39,
+    "positions": [
+      {
+        "symbol": "DKNG",
+        "qty": 56.0,
+        "side": "SHORT",
+        "entry": 28.86,
+        "current": 28.84,
+        "pnl": 1.12,
+        "pnl_pct": 0.07
+      }
+    ],
+    "today_trades": [],
+    "today_pnl": 939.24,
+    "stats": {
+      "today_trades": 0,
+      "today_wins": 0,
+      "today_losses": 0,
+      "today_win_rate": 0,
+      "today_avg_win": 0,
+      "today_avg_loss": 0,
+      "today_biggest_win": 0,
+      "today_biggest_loss": 0
+    },
+    "day_open_equity": 102137.62,
+    "day_close_equity": 103076.86,
+    "errors": [],
+    "today_trade_pnl": 0,
+    "all_time": {
+      "total_trades": 0,
+      "total_wins": 0,
+      "total_losses": 0,
+      "win_rate": 0,
+      "total_pnl": 0,
+      "equity_change": 3076.86
+    }
+  },
+  "h_analysis": {
+    "verdict": "loss",
+    "reason": "market_condition",
+    "insights": [
+      "Low win rate (3.6%) \u2014 adverse market conditions",
+      "Risk/reward is bad: avg win $16.68 vs avg loss $175.34"
+    ],
+    "issues": [
+      "Worst trade: LABU SELL @ $162.56 for $-695.70"
+    ],
+    "wins": [
+      "Best trade: HOOD SELL @ $87.81 for $19.36",
+      "Top symbol: HOOD \u2014 2 wins totalling $33.37"
+    ],
+    "suggestions": [
+      "Add market regime filter \u2014 skip days with strong drift",
+      "Tighten stop-losses to improve risk/reward ratio"
+    ]
+  },
+  "w_analysis": {
+    "verdict": "profitable",
+    "reason": "",
+    "insights": [],
+    "issues": [
+      "Carrying 1 position(s) overnight with $1.12 unrealized PnL"
+    ],
+    "wins": [],
+    "suggestions": []
+  }
+}

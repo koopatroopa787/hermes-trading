@@ -1,0 +1,87 @@
+{
+  "strategy": "orb_momentum_v11.py",
+  "score": 122.8715,
+  "symbol_results": [
+    {
+      "total_return_pct": 40.54,
+      "sharpe": 2.065,
+      "max_drawdown_pct": -39.92,
+      "win_rate_pct": 46.05,
+      "num_trades": 228,
+      "symbol": "SOXL"
+    },
+    {
+      "total_return_pct": 40.21,
+      "sharpe": 5.728,
+      "max_drawdown_pct": -12.24,
+      "win_rate_pct": 61.7,
+      "num_trades": 47,
+      "symbol": "AMD"
+    },
+    {
+      "total_return_pct": 53.15,
+      "sharpe": 4.918,
+      "max_drawdown_pct": -15.63,
+      "win_rate_pct": 56.14,
+      "num_trades": 57,
+      "symbol": "FNGU"
+    },
+    {
+      "total_return_pct": -3.5,
+      "sharpe": 1.138,
+      "max_drawdown_pct": -31.76,
+      "win_rate_pct": 39.05,
+      "num_trades": 105,
+      "symbol": "UPST"
+    },
+    {
+      "total_return_pct": 64.6,
+      "sharpe": 4.108,
+      "max_drawdown_pct": -19.5,
+      "win_rate_pct": 54.32,
+      "num_trades": 81,
+      "symbol": "TECL"
+    },
+    {
+      "total_return_pct": 13.91,
+      "sharpe": 1.67,
+      "max_drawdown_pct": -44.72,
+      "win_rate_pct": 43.02,
+      "num_trades": 179,
+      "symbol": "QBTS"
+    },
+    {
+      "total_return_pct": -8.5,
+      "sharpe": 0.589,
+      "max_drawdown_pct": -22.96,
+      "win_rate_pct": 42.65,
+      "num_trades": 68,
+      "symbol": "ARQQ"
+    },
+    {
+      "total_return_pct": 17.09,
+      "sharpe": 1.896,
+      "max_drawdown_pct": -34.78,
+      "win_rate_pct": 43.06,
+      "num_trades": 216,
+      "symbol": "RGTI"
+    },
+    {
+      "total_return_pct": 7.71,
+      "sharpe": 1.498,
+      "max_drawdown_pct": -34.62,
+      "win_rate_pct": 39.88,
+      "num_trades": 168,
+      "symbol": "QUBT"
+    },
+    {
+      "total_return_pct": 34.51,
+      "sharpe": 3.074,
+      "max_drawdown_pct": -22.0,
+      "win_rate_pct": 48.0,
+      "num_trades": 100,
+      "symbol": "AFRM"
+    }
+  ],
+  "tested_at": "2026-05-27T06:00:31.680187"
+}

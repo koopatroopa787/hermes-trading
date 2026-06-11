@@ -1,0 +1,87 @@
+{
+  "strategy": "momentum_volume_v1.py",
+  "score": 34.7915,
+  "symbol_results": [
+    {
+      "total_return_pct": -47.86,
+      "sharpe": 0.352,
+      "max_drawdown_pct": -50.12,
+      "win_rate_pct": 34.38,
+      "num_trades": 352,
+      "symbol": "RGTI"
+    },
+    {
+      "total_return_pct": -42.0,
+      "sharpe": 0.721,
+      "max_drawdown_pct": -46.04,
+      "win_rate_pct": 35.9,
+      "num_trades": 351,
+      "symbol": "QBTS"
+    },
+    {
+      "total_return_pct": -37.39,
+      "sharpe": 0.659,
+      "max_drawdown_pct": -39.32,
+      "win_rate_pct": 36.0,
+      "num_trades": 300,
+      "symbol": "QUBT"
+    },
+    {
+      "total_return_pct": 0.13,
+      "sharpe": 2.554,
+      "max_drawdown_pct": -25.34,
+      "win_rate_pct": 39.41,
+      "num_trades": 307,
+      "symbol": "IONQ"
+    },
+    {
+      "total_return_pct": 10.31,
+      "sharpe": 2.975,
+      "max_drawdown_pct": -16.66,
+      "win_rate_pct": 40.0,
+      "num_trades": 30,
+      "symbol": "ARQQ"
+    },
+    {
+      "total_return_pct": -51.02,
+      "sharpe": 0.159,
+      "max_drawdown_pct": -52.89,
+      "win_rate_pct": 40.16,
+      "num_trades": 366,
+      "symbol": "SOXL"
+    },
+    {
+      "total_return_pct": -44.77,
+      "sharpe": -0.041,
+      "max_drawdown_pct": -46.93,
+      "win_rate_pct": 34.84,
+      "num_trades": 287,
+      "symbol": "SMCI"
+    },
+    {
+      "total_return_pct": -18.3,
+      "sharpe": 1.711,
+      "max_drawdown_pct": -28.03,
+      "win_rate_pct": 41.02,
+      "num_trades": 256,
+      "symbol": "ARM"
+    },
+    {
+      "total_return_pct": -35.67,
+      "sharpe": 0.38,
+      "max_drawdown_pct": -36.29,
+      "win_rate_pct": 38.75,
+      "num_trades": 240,
+      "symbol": "COIN"
+    },
+    {
+      "total_return_pct": -45.33,
+      "sharpe": -1.335,
+      "max_drawdown_pct": -45.33,
+      "win_rate_pct": 30.51,
+      "num_trades": 236,
+      "symbol": "AFRM"
+    }
+  ],
+  "tested_at": "2026-05-23T23:47:06.843797"
+}

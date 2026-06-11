@@ -1,0 +1,230 @@
+{
+  "analyzed_at": "2026-06-11T08:30:48.581113-04:00",
+  "market_regime": "neutral",
+  "sentiment_score": -0.022,
+  "position_multiplier": 0.75,
+  "stop_multiplier": 0.75,
+  "target_multiplier": 0.85,
+  "skip_symbols": [],
+  "reduced_symbols": [
+    "ARM"
+  ],
+  "boost_symbols": [
+    "AAPL",
+    "AI",
+    "CRWD",
+    "FNGU",
+    "HOOD",
+    "LABU",
+    "TECL",
+    "UPST",
+    "WEBL"
+  ],
+  "per_symbol": {
+    "AAPL": {
+      "sentiment_score": 0.181,
+      "bullish_score": 0.181,
+      "bearish_score": 0.0,
+      "confidence": 0.27,
+      "position_multiplier": 1.2,
+      "recommendation": "slight_boost",
+      "catalysts": [
+        "WWDC"
+      ],
+      "notes": "Bull: 0.18 | Bear: 0.00 | Net: +0.18 | Neutral (+0.18) | Catalysts: WWDC | P/E: 35.3 | Rev growth: 16.6% | \u2192 Slightly increase position"
+    },
+    "AI": {
+      "sentiment_score": -0.106,
+      "bullish_score": 0.062,
+      "bearish_score": 0.169,
+      "confidence": 0.35,
+      "position_multiplier": 1.1,
+      "recommendation": "catalyst_boost",
+      "catalysts": [
+        "Earnings"
+      ],
+      "notes": "Bull: 0.06 | Bear: 0.17 | Net: -0.11 | Neutral (-0.11) | Catalysts: Earnings | Rev growth: -52.5% | \u2192 Event catalyst \u2014 increase size"
+    },
+    "ARM": {
+      "sentiment_score": -0.25,
+      "bullish_score": 0.025,
+      "bearish_score": 0.275,
+      "confidence": 0.45,
+      "position_multiplier": 0.5,
+      "recommendation": "reduce",
+      "catalysts": [],
+      "notes": "Bull: 0.03 | Bear: 0.28 | Net: -0.25 | Bearish (-0.25) | P/E: 357.5 | Rev growth: 20.1% | \u2192 Reduce position"
+    },
+    "BBAI": {
+      "sentiment_score": 0.0,
+      "bullish_score": 0.0,
+      "bearish_score": 0.0,
+      "confidence": 0.0,
+      "position_multiplier": 1.0,
+      "recommendation": "normal_low_conf",
+      "catalysts": [],
+      "notes": "Bull: 0.00 | Bear: 0.00 | Net: +0.00 | Neutral (+0.00) | Rev growth: -0.9% | \u2192 Standard (low confidence)"
+    },
+    "CRWD": {
+      "sentiment_score": 0.0,
+      "bullish_score": 0.044,
+      "bearish_score": 0.044,
+      "confidence": 0.13,
+      "position_multiplier": 1.2,
+      "recommendation": "catalyst_boost",
+      "catalysts": [
+        "Earnings",
+        "Stock Split"
+      ],
+      "notes": "Bull: 0.04 | Bear: 0.04 | Net: +0.00 | Neutral (+0.00) | Catalysts: Earnings, Stock Split | Rev growth: 25.6% | \u2192 Event catalyst \u2014 increase size"
+    },
+    "DKNG": {
+      "sentiment_score": -0.012,
+      "bullish_score": 0.025,
+      "bearish_score": 0.037,
+      "confidence": 0.09,
+      "position_multiplier": 1.0,
+      "recommendation": "normal_low_conf",
+      "catalysts": [],
+      "notes": "Bull: 0.03 | Bear: 0.04 | Net: -0.01 | Neutral (-0.01) | P/E: 319.9 | Rev growth: 16.8% | \u2192 Standard (low confidence)"
+    },
+    "FNGU": {
+      "sentiment_score": -0.056,
+      "bullish_score": 0.056,
+      "bearish_score": 0.113,
+      "confidence": 0.25,
+      "position_multiplier": 1.2,
+      "recommendation": "catalyst_boost",
+      "catalysts": [
+        "Analyst Upgrade",
+        "Earnings"
+      ],
+      "notes": "Bull: 0.06 | Bear: 0.11 | Net: -0.06 | Neutral (-0.06) | Catalysts: Analyst Upgrade, Earnings | P/E: 1.8 | \u2192 Event catalyst \u2014 increase size"
+    },
+    "HOOD": {
+      "sentiment_score": -0.075,
+      "bullish_score": 0.075,
+      "bearish_score": 0.15,
+      "confidence": 0.34,
+      "position_multiplier": 1.1,
+      "recommendation": "catalyst_boost",
+      "catalysts": [
+        "Earnings"
+      ],
+      "notes": "Bull: 0.07 | Bear: 0.15 | Net: -0.07 | Neutral (-0.07) | Catalysts: Earnings | P/E: 41.9 | Rev growth: 15.1% | \u2192 Event catalyst \u2014 increase size"
+    },
+    "IONQ": {
+      "sentiment_score": -0.125,
+      "bullish_score": 0.0,
+      "bearish_score": 0.125,
+      "confidence": 0.19,
+      "position_multiplier": 1.0,
+      "recommendation": "normal",
+      "catalysts": [],
+      "notes": "Bull: 0.00 | Bear: 0.12 | Net: -0.12 | Neutral (-0.12) | P/E: 145.2 | Rev growth: 754.7% | \u2192 Standard position"
+    },
+    "LABU": {
+      "sentiment_score": 0.113,
+      "bullish_score": 0.163,
+      "bearish_score": 0.05,
+      "confidence": 0.32,
+      "position_multiplier": 1.1,
+      "recommendation": "catalyst_boost",
+      "catalysts": [
+        "Earnings"
+      ],
+      "notes": "Bull: 0.16 | Bear: 0.05 | Net: +0.11 | Neutral (+0.11) | Catalysts: Earnings | \u2192 Event catalyst \u2014 increase size"
+    },
+    "NVDA": {
+      "sentiment_score": -0.044,
+      "bullish_score": 0.0,
+      "bearish_score": 0.044,
+      "confidence": 0.07,
+      "position_multiplier": 1.0,
+      "recommendation": "normal_low_conf",
+      "catalysts": [],
+      "notes": "Bull: 0.00 | Bear: 0.04 | Net: -0.04 | Neutral (-0.04) | P/E: 30.7 | Rev growth: 85.2% | \u2192 Standard (low confidence)"
+    },
+    "QUBT": {
+      "sentiment_score": -0.025,
+      "bullish_score": 0.044,
+      "bearish_score": 0.069,
+      "confidence": 0.17,
+      "position_multiplier": 1.0,
+      "recommendation": "normal",
+      "catalysts": [],
+      "notes": "Bull: 0.04 | Bear: 0.07 | Net: -0.03 | Neutral (-0.03) | Rev growth: 9364.1% | \u2192 Standard position"
+    },
+    "SNAP": {
+      "sentiment_score": -0.037,
+      "bullish_score": 0.0,
+      "bearish_score": 0.037,
+      "confidence": 0.06,
+      "position_multiplier": 1.0,
+      "recommendation": "normal_low_conf",
+      "catalysts": [],
+      "notes": "Bull: 0.00 | Bear: 0.04 | Net: -0.04 | Neutral (-0.04) | Rev growth: 12.1% | \u2192 Standard (low confidence)"
+    },
+    "SOXL": {
+      "sentiment_score": 0.0,
+      "bullish_score": 0.0,
+      "bearish_score": 0.0,
+      "confidence": 0.0,
+      "position_multiplier": 1.0,
+      "recommendation": "normal_low_conf",
+      "catalysts": [],
+      "notes": "Bull: 0.00 | Bear: 0.00 | Net: +0.00 | Neutral (+0.00) | P/E: 38.9 | \u2192 Standard (low confidence)"
+    },
+    "TECL": {
+      "sentiment_score": -0.038,
+      "bullish_score": 0.05,
+      "bearish_score": 0.088,
+      "confidence": 0.21,
+      "position_multiplier": 1.1,
+      "recommendation": "catalyst_boost",
+      "catalysts": [
+        "Earnings"
+      ],
+      "notes": "Bull: 0.05 | Bear: 0.09 | Net: -0.04 | Neutral (-0.04) | Catalysts: Earnings | P/E: 29.3 | \u2192 Event catalyst \u2014 increase size"
+    },
+    "UPST": {
+      "sentiment_score": 0.081,
+      "bullish_score": 0.106,
+      "bearish_score": 0.025,
+      "confidence": 0.2,
+      "position_multiplier": 1.2,
+      "recommendation": "catalyst_boost",
+      "catalysts": [
+        "Conference",
+        "Partnership"
+      ],
+      "notes": "Bull: 0.11 | Bear: 0.03 | Net: +0.08 | Neutral (+0.08) | Catalysts: Conference, Partnership | P/E: 73.9 | Rev growth: 44.6% | \u2192 Event catalyst \u2014 increase size"
+    },
+    "WEBL": {
+      "sentiment_score": 0.025,
+      "bullish_score": 0.05,
+      "bearish_score": 0.025,
+      "confidence": 0.11,
+      "position_multiplier": 1.1,
+      "recommendation": "catalyst_boost",
+      "catalysts": [
+        "Earnings"
+      ],
+      "notes": "Bull: 0.05 | Bear: 0.03 | Net: +0.03 | Neutral (+0.03) | Catalysts: Earnings | P/E: 23.4 | \u2192 Event catalyst \u2014 increase size"
+    }
+  },
+  "notes": "Regime: neutral (-0.02) | Base mult: 0.75 | \ud83d\udd3a Boost: AAPL, AI, CRWD, FNGU, HOOD, LABU, TECL, UPST, WEBL | \ud83d\udd3b Reduced: ARM",
+  "key_headlines": [
+    "Stock market today: Dow, S&P 500, Nasdaq futures rise after US completes fresh round of Iran strikes",
+    "Stock market today: Live updates",
+    "Stock Market Today, June 10: Robinhood Markets Rises on IPO Underwriting Announcement",
+    "Stock Market Today, June 10: Hot Inflation and War Escalation Fears Pressure Stocks at Midday | The Motley Fool",
+    "Stock Market Today, June 10: Broadcom Falls as Strong AI Quarter Tests Stock\u2019s Premium Valuation",
+    "US inflation jumped to 4.2% in May amid Middle East energy shock",
+    "Inflation Jumps as Iran War Intensifies Price Squeeze - The New York Times",
+    "Marjorie Taylor Greene signals US economy \u2018in decline\u2019 under Donald Trump",
+    "Analysis: Trump\u2019s most tone-deaf comments on Iran and the economy, ranked | CNN Politics",
+    "What May's inflation report signals about state of U.S. economy - CBS News"
+  ],
+  "summary": "Neutral (-0.02). ['AAPL', 'AI', 'CRWD', 'FNGU', 'HOOD', 'LABU', 'TECL', 'UPST', 'WEBL'] boosted. ['ARM'] reduced. [] skipped."
+}

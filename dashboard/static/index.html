@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐧 Trading Dashboard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0e17;color:#e0e6f0;min-height:100vh}
+.container{max-width:1400px;margin:0 auto;padding:12px}
+
+/* Header */
+header{background:linear-gradient(135deg,#0f1724,#1a2538);border-bottom:1px solid #1e3250;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+header h1{font-size:20px;font-weight:700}
+.subtitle{color:#7a8aa4;font-size:12px}
+.header-right{display:flex;align-items:center;gap:12px}
+.status-badge{background:#1a3a2a;color:#4ade80;padding:3px 10px;border-radius:20px;font-size:11px;border:1px solid #2a5a3a}
+.refresh-btn{background:#1e3250;border:1px solid #2a4a6a;color:#7ab8ff;padding:5px 12px;border-radius:8px;cursor:pointer;font-size:12px}
+
+/* Cards */
+.card{background:#111a28;border:1px solid #1e3050;border-radius:10px;padding:14px;margin-bottom:12px}
+.card-title{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#6a7a94;margin-bottom:8px;font-weight:600}
+.card-value{font-size:22px;font-weight:700}
+.card-label{font-size:11px;color:#6a7a94;margin-top:2px}
+.green{color:#4ade80}
+.red{color:#f87171}
+.blue{color:#60a5fa}
+.yellow{color:#facc15}
+
+/* Grid */
+.grid{display:grid;gap:12px}
+.grid-2{grid-template-columns:1fr 1fr}
+.grid-3{grid-template-columns:1fr 1fr 1fr}
+.grid-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+
+/* Stat rows */
+.stat-row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px;border-bottom:1px solid #0d1520}
+.stat-row:last-child{border:none}
+.stat-label{color:#6a7a94}
+.stat-value{font-weight:600}
+
+/* Tables */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:6px 8px;color:#6a7a94;font-weight:500;border-bottom:1px solid #1e3050;font-size:10px;text-transform:uppercase;letter-spacing:0.5px}
+td{padding:6px 8px;border-bottom:1px solid #162238}
+tr:hover td{background:#0f1a28}
+
+/* Nav tabs */
+.nav{display:flex;gap:3px;margin-bottom:10px;flex-wrap:wrap}
+.nav-btn{background:transparent;border:1px solid #1e3050;color:#6a7a94;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px}
+.nav-btn.active{background:#1a2a4a;color:#7ab8ff;border-color:#2a5a8a}
+.page{display:none}
+.page.active{display:block}
+
+/* Mini bot card */
+.mini-card{background:#0d1520;border:1px solid #1a2a3a;border-radius:8px;padding:10px;margin:4px 0}
+.mini-card .label{color:#6a7a94;font-size:11px}
+.mini-card .val{font-weight:600;font-size:14px}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#0a0e17}
+::-webkit-scrollbar-thumb{background:#2a3a5a;border-radius:3px}
+
+.loading{color:#4a5a74;text-align:center;padding:30px;font-size:13px}
+.error-box{background:#2a1010;border:1px solid #4a2020;border-radius:8px;padding:12px;color:#f87171;font-size:13px;margin:8px 0}
+
+/* Simple bar chart */
+.bar-chart{display:flex;align-items:flex-end;gap:3px;height:180px;padding:10px 0}
+.bar{flex:1;min-width:4px;border-radius:3px 3px 0 0;position:relative;transition:0.3s}
+.bar:hover{opacity:0.8}
+.bar-label{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:8px;color:#4a5a74;white-space:nowrap}
+
+/* Equity line chart as SVG */
+.equity-chart{width:100%;height:220px}
+.equity-chart svg{width:100%;height:100%}
+
+/* Pulse indicator */
+.pulse{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.pulse.g{background:#4ade80;box-shadow:0 0 6px #4ade8066}
+.pulse.r{background:#f87171}
+.pulse.y{background:#facc15}
+
+/* Trade row colors */
+.trade-buy{color:#4ade80}
+.trade-sell{color:#f87171}
+
+/* Donut chart */
+.donut-wrap{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.donut{width:160px;height:160px;border-radius:50%;position:relative}
+.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;font-size:11px;color:#6a7a94}
+.donut-legend{font-size:11px}
+.donut-legend-item{display:flex;align-items:center;gap:6px;margin:3px 0}
+.donut-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+/* Changelog */
+.changelog{font-size:12px;line-height:1.6}
+.changelog h3{color:#7ab8ff;margin:8px 0 4px;font-size:13px}
+.changelog li{color:#a0b0c8;margin:2px 0;list-style:disc;margin-left:16px}
+
+.tabs{display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap}
+.tab{background:transparent;border:1px solid #1e3050;color:#6a7a94;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:11px}
+.tab.active{background:#1a2a4a;color:#7ab8ff;border-color:#2a5a8a}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>🐧 Trading Dashboard</h1>
+    <div class="subtitle" id="lastUpdate">Loading...</div>
+  </div>
+  <div class="header-right">
+    <span id="statusDot" class="pulse y"></span>
+    <span id="statusText" class="subtitle">Loading</span>
+    <button class="refresh-btn" onclick="loadAll()">🔄 Refresh</button>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Summary Bar -->
+  <div class="grid grid-4" style="margin-top:12px" id="summaryCards">
+    <div class="card"><div class="card-title">Total Portfolio</div><div class="card-value" id="totalEq">—</div></div>
+    <div class="card"><div class="card-title">Hermes Equity</div><div class="card-value blue" id="hermesEq">—</div></div>
+    <div class="card"><div class="card-title">WQ Brain Equity</div><div class="card-value green" id="wqEq">—</div></div>
+    <div class="card"><div class="card-title">Open Positions</div><div class="card-value yellow" id="totalPos">—</div></div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <button class="nav-btn active" onclick="showPage('overview',this)">📊 Overview</button>
+    <button class="nav-btn" onclick="showPage('hermes',this)">🐧 Hermes</button>
+    <button class="nav-btn" onclick="showPage('wq',this)">🧠 WQ Brain</button>
+    <button class="nav-btn" onclick="showPage('trades',this)">📜 Trades</button>
+    <button class="nav-btn" onclick="showPage('changelog',this)">📝 Changelog</button>
+  </div>
+
+  <!-- PAGE: Overview -->
+  <div id="page-overview" class="page active">
+    <!-- Bot cards -->
+    <div class="grid grid-2" id="botCards">
+      <div class="card"><div class="loading">Loading Hermes...</div></div>
+      <div class="card"><div class="loading">Loading WQ Brain...</div></div>
+    </div>
+    <!-- Combined equity & PnL charts -->
+    <div class="card">
+      <div class="card-title">Combined Portfolio Equity (both bots)</div>
+      <div id="equityChartContainer"><div class="loading">Building chart...</div></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-title">Portfolio Allocation</div>
+        <div id="allocationContainer"><div class="loading">Loading...</div></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Performance Summary</div>
+        <div id="perfSummary"><div class="loading">Loading...</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE: Hermes -->
+  <div id="page-hermes" class="page">
+    <div class="card" id="hermesDetail"><div class="loading">Loading...</div></div>
+    <div class="card">
+      <div class="card-title">Hermes Positions</div>
+      <div id="hermesPositions"><div class="loading">Loading...</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Hermes Trade History</div>
+      <div class="table-wrap" id="hermesTrades"><div class="loading">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- PAGE: WQ Brain -->
+  <div id="page-wq" class="page">
+    <div class="card" id="wqDetail"><div class="loading">Loading...</div></div>
+    <div class="card">
+      <div class="card-title">WQ Brain Positions</div>
+      <div id="wqPositions"><div class="loading">Loading...</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">WQ Brain Trade History</div>
+      <div class="table-wrap" id="wqTrades"><div class="loading">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- PAGE: Trades -->
+  <div id="page-trades" class="page">
+    <div class="card">
+      <div class="tabs">
+        <button class="tab active" onclick="filterTrades('all',this)">All</button>
+        <button class="tab" onclick="filterTrades('Hermes',this)">Hermes</button>
+        <button class="tab" onclick="filterTrades('WQ Brain',this)">WQ Brain</button>
+      </div>
+      <div class="table-wrap" id="allTrades"><div class="loading">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- PAGE: Changelog -->
+  <div id="page-changelog" class="page">
+    <div class="card">
+      <div class="card-title">Recent Changes</div>
+      <div class="changelog" id="changelogContent"><div class="loading">Loading...</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+let state = { hermes: null, wq: null, summary: null };
+
+async function api(path) {
+  try {
+    const r = await fetch(path);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch(e) {
+    console.error('API error:', path, e);
+    return null;
+  }
+}
+
+function fmt(v) {
+  if (v === null || v === undefined) return '—';
+  const s = v >= 0 ? '' : '−';
+  return s + '$' + Math.abs(v).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+
+function pct(v) {
+  if (v === null || v === undefined) return '—';
+  return (v >= 0 ? '+' : '') + v.toFixed(2) + '%';
+}
+
+function showPage(name, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+// --- SVG Equity Chart ---
+function renderEquityChart(hermesEq, wqEq) {
+  const container = document.getElementById('equityChartContainer');
+  
+  // Combine both equity curves
+  const points = [];
+  for (const p of (hermesEq || [])) points.push({ts: p.timestamp, h: p.equity, w: null});
+  for (const p of (wqEq || [])) points.push({ts: p.timestamp, h: null, w: p.equity});
+  points.sort((a,b) => a.ts.localeCompare(b.ts));
+  
+  if (points.length < 2) {
+    container.innerHTML = '<div class="loading">Not enough data yet</div>';
+    return;
+  }
+  
+  // Fill gaps
+  let lastH = null, lastW = null;
+  const data = [];
+  for (const p of points) {
+    if (p.h !== null) lastH = p.h;
+    if (p.w !== null) lastW = p.w;
+    if (lastH !== null && lastW !== null) {
+      data.push({ts: p.ts.substring(5,16), combined: lastH + lastW, hermes: lastH, wq: lastW});
+    }
+  }
+  
+  if (data.length < 2) {
+    container.innerHTML = '<div class="loading">Building data...</div>';
+    return;
+  }
+  
+  // Take last 100 points max
+  const slice = Math.max(0, data.length - 100);
+  const chartData = data.slice(slice);
+  
+  const W = 800, H = 220, pad = {top: 10, right: 10, bottom: 25, left: 65};
+  const cw = W - pad.left - pad.right, ch = H - pad.top - pad.bottom;
+  
+  const vals = chartData.map(d => d.combined);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const range = max - min || 1;
+  
+  function x(i) { return pad.left + (i / (chartData.length - 1)) * cw; }
+  function y(v) { return pad.top + ch - ((v - min) / range) * ch; }
+  
+  function makePath(data, key) {
+    return data.map((d,i) => (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(d[key]).toFixed(1)).join(' ');
+  }
+  
+  // Gridlines
+  let gridLines = '';
+  const gridCount = 5;
+  for (let i = 0; i <= gridCount; i++) {
+    const gy = pad.top + (i / gridCount) * ch;
+    const gv = max - (i / gridCount) * range;
+    gridLines += `<line x1="${pad.left}" y1="${gy}" x2="${W-pad.right}" y2="${gy}" stroke="#162238" stroke-width="1"/>`;
+    gridLines += `<text x="${pad.left-5}" y="${gy+3}" fill="#4a5a74" font-size="10" text-anchor="end">$${Math.round(gv).toLocaleString()}</text>`;
+  }
+  
+  // X-axis labels
+  let xLabels = '';
+  const labelCount = Math.min(8, chartData.length);
+  const step = Math.max(1, Math.floor(chartData.length / labelCount));
+  for (let i = 0; i < chartData.length; i += step) {
+    xLabels += `<text x="${x(i)}" y="${H-5}" fill="#4a5a74" font-size="9" text-anchor="middle">${chartData[i].ts}</text>`;
+  }
+  
+  container.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="equity-chart">
+    ${gridLines}
+    ${xLabels}
+    <path d="${makePath(chartData, 'combined')}" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="${makePath(chartData, 'hermes')}" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.4" stroke-dasharray="4,3" stroke-linejoin="round"/>
+    <path d="${makePath(chartData, 'wq')}" fill="none" stroke="#4ade80" stroke-width="1" opacity="0.4" stroke-dasharray="4,3" stroke-linejoin="round"/>
+    <text x="${W-10}" y="16" fill="#60a5fa" font-size="11" text-anchor="end">━ Combined</text>
+    <text x="${W-10}" y="30" fill="#60a5fa" font-size="10" text-anchor="end" opacity="0.6">- - Hermes</text>
+    <text x="${W-10}" y="44" fill="#4ade80" font-size="10" text-anchor="end" opacity="0.6">- - WQ Brain</text>
+  </svg>`;
+}
+
+// --- Donut chart (pure CSS/SVG) ---
+function renderAllocation(hermesPos, wqPos) {
+  const container = document.getElementById('allocationContainer');
+  const all = [
+    ...(hermesPos || []).map(p => ({...p, bot: 'Hermes'})),
+    ...(wqPos || []).map(p => ({...p, bot: 'WQ Brain'}))
+  ];
+  
+  if (all.length === 0) {
+    container.innerHTML = '<div class="loading">No open positions</div>';
+    return;
+  }
+  
+  const total = all.reduce((s, p) => s + Math.abs(p.market_value || 0), 0);
+  if (total === 0) {
+    container.innerHTML = '<div class="loading">No position value</div>';
+    return;
+  }
+  
+  const colors = ['#60a5fa','#4ade80','#f87171','#facc15','#c084fc','#fb923c','#38bdf8','#a78bfa','#34d399','#f472b6'];
+  
+  let conic = '';
+  let angle = 0;
+  const legends = [];
+  
+  all.forEach((p, i) => {
+    const pctVal = Math.abs(p.market_value) / total * 100;
+    const deg = pctVal * 3.6;
+    const c = colors[i % colors.length];
+    conic += `${c} ${angle}deg ${angle + deg}deg, `;
+    angle += deg;
+    legends.push(`<div class="donut-legend-item"><span class="donut-dot" style="background:${c}"></span>${p.symbol} <span style="color:#6a7a94">${pctVal.toFixed(1)}%</span></div>`);
+  });
+  
+  container.innerHTML = `<div class="donut-wrap">
+    <div class="donut" style="background:conic-gradient(${conic.slice(0,-2)})">
+      <div class="donut-center"><div style="font-size:18px;font-weight:700">${all.length}</div>positions</div>
+    </div>
+    <div class="donut-legend">${legends.join('')}</div>
+  </div>`;
+}
+
+// --- Performance summary ---
+function renderPerfSummary(hStats, wStats) {
+  const container = document.getElementById('perfSummary');
+  
+  const renderBot = (name, s, color) => {
+    if (!s || !s.total_trades) return `<div style="color:#4a5a74;font-size:12px;margin-top:8px">${name}: No trade data</div>`;
+    return `<div style="margin-top:8px">
+      <div style="font-weight:600;color:${color};margin-bottom:4px">${name}</div>
+      <div class="stat-row"><span class="stat-label">Total Trades</span><span class="stat-value">${s.total_trades}</span></div>
+      <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-value ${s.win_rate >= 50 ? 'green' : 'red'}">${s.win_rate}%</span></div>
+      <div class="stat-row"><span class="stat-label">Wins / Losses</span><span class="stat-value">${s.wins}W / ${s.losses}L</span></div>
+      <div class="stat-row"><span class="stat-label">Avg Win</span><span class="stat-value green">${fmt(s.avg_win)}</span></div>
+      <div class="stat-row"><span class="stat-label">Avg Loss</span><span class="stat-value red">${fmt(s.avg_loss)}</span></div>
+      <div class="stat-row"><span class="stat-label">Best Trade</span><span class="stat-value green">${fmt(s.largest_win)}</span></div>
+      <div class="stat-row"><span class="stat-label">Worst Trade</span><span class="stat-value red">${fmt(s.largest_loss)}</span></div>
+    </div>`;
+  };
+  
+  container.innerHTML = renderBot('Hermes', hStats, '#60a5fa') + renderBot('WQ Brain', wStats, '#4ade80');
+}
+
+// --- Bot detail card ---
+function renderBotCard(botData, name, color, startCapital) {
+  if (!botData) return '<div class="loading">No data</div>';
+  const eq = botData.account?.equity || 0;
+  const cash = botData.account?.cash || 0;
+  const todayPnL = botData.today_pnl || 0;
+  const totalPnL = eq - startCapital;
+  const pos = botData.positions || [];
+  const stats = botData.stats || {};
+  
+  return `<div class="flex-between" style="margin-bottom:8px">
+    <div><span style="font-size:16px;font-weight:600;color:${color}">${name}</span>
+    <span class="subtitle" style="margin-left:8px">${botData.strategy || ''}</span></div>
+    <span class="status-badge" style="background:${pos.length > 0 ? '#1a3a2a' : '#1a2a3a'};color:${pos.length > 0 ? '#4ade80' : '#6a7a94'}">${pos.length} positions</span>
+  </div>
+  <div class="stat-row"><span class="stat-label">Equity</span><span class="stat-value">${fmt(eq)}</span></div>
+  <div class="stat-row"><span class="stat-label">Cash</span><span class="stat-value blue">${fmt(cash)}</span></div>
+  <div class="stat-row"><span class="stat-label">Today P&L</span><span class="stat-value ${todayPnL >= 0 ? 'green' : 'red'}">${fmt(todayPnL)}</span></div>
+  <div class="stat-row"><span class="stat-label">All-Time P&L</span><span class="stat-value ${totalPnL >= 0 ? 'green' : 'red'}">${fmt(totalPnL)}</span></div>
+  <div class="stat-row"><span class="stat-label">Return</span><span class="stat-value ${totalPnL >= 0 ? 'green' : 'red'}">${pct(totalPnL / startCapital * 100)}</span></div>
+  <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-value ${(stats.win_rate || 0) >= 50 ? 'green' : 'red'}">${stats.win_rate || 0}%</span></div>
+  <div class="stat-row"><span class="stat-label">Closed Trades</span><span class="stat-value">${stats.total_trades || 0}</span></div>`;
+}
+
+// --- Positions table ---
+function renderPositionsTable(positions, containerId) {
+  const container = document.getElementById(containerId);
+  if (!positions || positions.length === 0) {
+    container.innerHTML = '<div style="text-align:center;padding:20px;color:#4a5a74">No open positions</div>';
+    return;
+  }
+  
+  container.innerHTML = `<table>
+    <tr><th>Symbol</th><th>Side</th><th>Qty</th><th>Entry</th><th>Current</th><th>Value</th><th>P&L</th><th>%</th></tr>
+    ${positions.map(p => `<tr>
+      <td><strong>${p.symbol}</strong></td>
+      <td style="color:${p.side === 'LONG' ? '#4ade80' : '#f87171'}">${p.side}</td>
+      <td>${p.qty}</td>
+      <td>${fmt(p.entry)}</td>
+      <td>${fmt(p.current)}</td>
+      <td>${fmt(p.market_value)}</td>
+      <td class="${p.pnl >= 0 ? 'green' : 'red'}">${fmt(p.pnl)}</td>
+      <td class="${p.pnl_pct >= 0 ? 'green' : 'red'}">${p.pnl_pct >= 0 ? '+' : ''}${p.pnl_pct.toFixed(2)}%</td>
+    </tr>`).join('')}
+  </table>`;
+}
+
+// --- Trade table ---
+function renderTradesTable(trades, containerId, filterBot) {
+  const container = document.getElementById(containerId);
+  if (!trades || trades.length === 0) {
+    container.innerHTML = '<div style="text-align:center;padding:20px;color:#4a5a74">No trades</div>';
+    return;
+  }
+  
+  let filtered = trades;
+  if (filterBot) filtered = trades.filter(t => t.bot === filterBot);
+  
+  container.innerHTML = `<table>
+    <tr><th>Time</th>${filterBot ? '' : '<th>Bot</th>'}<th>Symbol</th><th>Side</th><th>Qty</th><th>Price</th><th>P&L</th></tr>
+    ${filtered.slice(0, 50).map(t => {
+      const pnlStr = t.pnl !== null ? `<span class="${t.pnl >= 0 ? 'green' : 'red'}">${fmt(t.pnl)}</span>` : '<span style="color:#4a5a74">—</span>';
+      const botCell = filterBot ? '' : `<td><span style="color:${t.bot === 'Hermes' ? '#60a5fa' : '#4ade80'}">${t.bot}</span></td>`;
+      return `<tr>
+        <td style="color:#4a5a74;font-size:10px">${(t.timestamp || '').substring(5,16)}</td>
+        ${botCell}
+        <td><strong>${t.symbol}</strong></td>
+        <td class="${t.side === 'BUY' ? 'trade-buy' : 'trade-sell'}">${t.side}</td>
+        <td>${t.qty}</td>
+        <td>${t.price ? fmt(t.price) : '<span style="color:#4a5a74">—</span>'}</td>
+        <td>${pnlStr}</td>
+      </tr>`;
+    }).join('')}
+  </table>`;
+}
+
+let currentTradeFilter = 'all';
+function filterTrades(bot, btn) {
+  currentTradeFilter = bot;
+  document.querySelectorAll('#page-trades .tab').forEach(t => t.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderTradesTable(state.allTrades || [], 'allTrades', bot === 'all' ? null : bot);
+}
+
+// --- Main loader ---
+async function loadAll() {
+  document.getElementById('statusText').textContent = 'Loading...';
+  document.getElementById('statusDot').className = 'pulse y';
+  
+  const [summary, hermes, wq, allTrades, changelog] = await Promise.all([
+    api('/api/summary'),
+    api('/api/hermes'),
+    api('/api/wq'),
+    api('/api/alltrades'),
+    api('/api/changelog')
+  ]);
+  
+  state.summary = summary;
+  state.hermes = hermes;
+  state.wq = wq;
+  state.allTrades = allTrades;
+  
+  // Summary cards
+  if (summary) {
+    document.getElementById('totalEq').textContent = fmt(summary.total_equity);
+    document.getElementById('hermesEq').textContent = fmt(summary.hermes_equity);
+    document.getElementById('wqEq').textContent = fmt(summary.wq_equity);
+  }
+  
+  const totalPos = (hermes?.positions?.length || 0) + (wq?.positions?.length || 0);
+  document.getElementById('totalPos').textContent = totalPos;
+  
+  // Overview page
+  document.getElementById('botCards').innerHTML = `
+    <div class="card">${renderBotCard(hermes, '🐧 Hermes', '#60a5fa', 100000)}</div>
+    <div class="card">${renderBotCard(wq, '🧠 WQ Brain', '#4ade80', 100000)}</div>`;
+  
+  renderEquityChart(hermes?.equity_curve, wq?.equity_curve);
+  renderAllocation(hermes?.positions, wq?.positions);
+  renderPerfSummary(hermes?.stats, wq?.stats);
+  
+  // Hermes page
+  document.getElementById('hermesDetail').innerHTML = renderBotCard(hermes, '🐧 Hermes Bot', '#60a5fa', 100000);
+  renderPositionsTable(hermes?.positions, 'hermesPositions');
+  renderTradesTable(hermes?.recent_trades || [], 'hermesTrades');
+  
+  // WQ page
+  document.getElementById('wqDetail').innerHTML = renderBotCard(wq, '🧠 WQ Brain Bot', '#4ade80', 100000);
+  renderPositionsTable(wq?.positions, 'wqPositions');
+  renderTradesTable(wq?.recent_trades || [], 'wqTrades');
+  
+  // All trades
+  renderTradesTable(allTrades || [], 'allTrades', currentTradeFilter === 'all' ? null : currentTradeFilter);
+  
+  // Changelog
+  if (changelog?.markdown) {
+    let html = changelog.markdown
+      .replace(/### (.*)/g, '<h3>$1</h3>')
+      .replace(/## (.*)/g, '<h2 style="color:#7ab8ff;font-size:14px;margin:12px 0 4px">$1</h2>')
+      .replace(/- (.*)/g, '<li>$1</li>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    document.getElementById('changelogContent').innerHTML = html || '<div class="loading">No entries</div>';
+  }
+  
+  document.getElementById('lastUpdate').textContent = 'Updated: ' + new Date().toLocaleTimeString();
+  document.getElementById('statusText').textContent = 'Live ✓';
+  document.getElementById('statusDot').className = 'pulse g';
+}
+
+// Initial load
+document.addEventListener('DOMContentLoaded', () => {
+  loadAll();
+  setInterval(loadAll, 30000);
+});
+</script>
+</body>
+</html>

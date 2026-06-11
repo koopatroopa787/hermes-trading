@@ -1,0 +1,87 @@
+{
+  "strategy": "orb_spring_v1.py",
+  "score": 0,
+  "symbol_results": [
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "RGTI"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "QBTS"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "QUBT"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "IONQ"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "ARQQ"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "SOXL"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "SMCI"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "ARM"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "COIN"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "AFRM"
+    }
+  ],
+  "tested_at": "2026-05-23T23:48:58.902264"
+}

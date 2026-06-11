@@ -1,0 +1,87 @@
+{
+  "strategy": "vwap_reversion_v21.py",
+  "score": 578.4169,
+  "symbol_results": [
+    {
+      "total_return_pct": 3.46,
+      "sharpe": 91.381,
+      "max_drawdown_pct": -1.21,
+      "win_rate_pct": 100.0,
+      "num_trades": 3,
+      "symbol": "SOXL"
+    },
+    {
+      "total_return_pct": -6.12,
+      "sharpe": -2.599,
+      "max_drawdown_pct": -11.93,
+      "win_rate_pct": 66.67,
+      "num_trades": 9,
+      "symbol": "LABU"
+    },
+    {
+      "total_return_pct": 9.55,
+      "sharpe": 6.123,
+      "max_drawdown_pct": -6.25,
+      "win_rate_pct": 87.5,
+      "num_trades": 24,
+      "symbol": "HOOD"
+    },
+    {
+      "total_return_pct": 2.66,
+      "sharpe": 2.659,
+      "max_drawdown_pct": -6.52,
+      "win_rate_pct": 84.21,
+      "num_trades": 19,
+      "symbol": "UPST"
+    },
+    {
+      "total_return_pct": -1.1,
+      "sharpe": 1.611,
+      "max_drawdown_pct": -9.15,
+      "win_rate_pct": 89.47,
+      "num_trades": 19,
+      "symbol": "SNAP"
+    },
+    {
+      "total_return_pct": 1.31,
+      "sharpe": 37.775,
+      "max_drawdown_pct": -0.19,
+      "win_rate_pct": 100.0,
+      "num_trades": 2,
+      "symbol": "FNGU"
+    },
+    {
+      "total_return_pct": -2.51,
+      "sharpe": -2.781,
+      "max_drawdown_pct": -4.77,
+      "win_rate_pct": 75.0,
+      "num_trades": 4,
+      "symbol": "ARM"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "TECL"
+    },
+    {
+      "total_return_pct": 4.36,
+      "sharpe": 25.089,
+      "max_drawdown_pct": -3.32,
+      "win_rate_pct": 100.0,
+      "num_trades": 7,
+      "symbol": "IONQ"
+    },
+    {
+      "total_return_pct": -4.2,
+      "sharpe": -6.223,
+      "max_drawdown_pct": -7.2,
+      "win_rate_pct": 50.0,
+      "num_trades": 4,
+      "symbol": "CRWD"
+    }
+  ],
+  "tested_at": "2026-06-05T05:04:21.711310"
+}

@@ -1,0 +1,96 @@
+{
+  "strategy": "orb_momentum_v25.py",
+  "path": "/home/ubuntu/trading-bot/strategies/candidates/orb_momentum_v25.py",
+  "score": 138.8007,
+  "promoted_at": "2026-06-02T06:01:05.757685",
+  "symbol_results": [
+    {
+      "total_return_pct": 105.98,
+      "sharpe": 4.376,
+      "max_drawdown_pct": -20.19,
+      "win_rate_pct": 44.72,
+      "num_trades": 123,
+      "symbol": "ARM"
+    },
+    {
+      "total_return_pct": -15.05,
+      "sharpe": 0.32,
+      "max_drawdown_pct": -34.76,
+      "win_rate_pct": 30.77,
+      "num_trades": 91,
+      "symbol": "AI"
+    },
+    {
+      "total_return_pct": -8.98,
+      "sharpe": 0.65,
+      "max_drawdown_pct": -15.77,
+      "win_rate_pct": 31.94,
+      "num_trades": 72,
+      "symbol": "DKNG"
+    },
+    {
+      "total_return_pct": 14.08,
+      "sharpe": 1.678,
+      "max_drawdown_pct": -32.58,
+      "win_rate_pct": 33.82,
+      "num_trades": 207,
+      "symbol": "QUBT"
+    },
+    {
+      "total_return_pct": 92.71,
+      "sharpe": 5.41,
+      "max_drawdown_pct": -18.44,
+      "win_rate_pct": 50.62,
+      "num_trades": 81,
+      "symbol": "TECL"
+    },
+    {
+      "total_return_pct": 59.8,
+      "sharpe": 6.192,
+      "max_drawdown_pct": -16.19,
+      "win_rate_pct": 56.25,
+      "num_trades": 64,
+      "symbol": "CRWD"
+    },
+    {
+      "total_return_pct": 5.29,
+      "sharpe": 2.193,
+      "max_drawdown_pct": -10.44,
+      "win_rate_pct": 33.33,
+      "num_trades": 27,
+      "symbol": "LABU"
+    },
+    {
+      "total_return_pct": 18.21,
+      "sharpe": 2.094,
+      "max_drawdown_pct": -20.34,
+      "win_rate_pct": 36.31,
+      "num_trades": 157,
+      "symbol": "BBAI"
+    },
+    {
+      "total_return_pct": 21.99,
+      "sharpe": 3.628,
+      "max_drawdown_pct": -18.03,
+      "win_rate_pct": 43.48,
+      "num_trades": 46,
+      "symbol": "WEBL"
+    },
+    {
+      "total_return_pct": 17.9,
+      "sharpe": 4.332,
+      "max_drawdown_pct": -11.62,
+      "win_rate_pct": 46.34,
+      "num_trades": 41,
+      "symbol": "NVDA"
+    },
+    {
+      "total_return_pct": 0.0,
+      "sharpe": 0,
+      "max_drawdown_pct": 0.0,
+      "win_rate_pct": 0,
+      "num_trades": 0,
+      "symbol": "AAPL"
+    }
+  ]
+}
