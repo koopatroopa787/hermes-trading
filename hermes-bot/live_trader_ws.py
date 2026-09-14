@@ -239,6 +239,7 @@ def refresh_positions():
                 "avg_entry": float(p.avg_entry_price),
                 "market_value": float(p.market_value),
                 "unrealized_pl": float(p.unrealized_pl),
+                "current_price": float(p.current_price),
             }
         positions = pos_map
         logger.info(f"Positions synced: {len(positions)} open")
