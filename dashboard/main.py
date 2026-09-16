@@ -16,7 +16,11 @@ DATA = BASE / "trading-dashboard"
 CHANGELOG_FILE = DATA / "changelog.md"
 EQUITY_FILE = DATA / "equity_log.json"
 
-ET_TZ = timedelta(hours=-4)  # Approx EDT, will use UTC offset
+try:
+    from zoneinfo import ZoneInfo
+    ET_TZ = ZoneInfo("America/New_York")
+except ImportError:
+    ET_TZ = None  # zoneinfo available Python 3.9+; fallback to UTC where needed
 
 def alpaca_client(bot_dir):
     """Get Alpaca client for a bot directory."""
@@ -132,7 +136,7 @@ def parse_equity_from_logs(bot_dir):
                 eq = entry.get("hermes", 0)
                 if ts and eq:
                     points.append({"timestamp": ts, "equity": eq})
-        except:
+        except Exception:
             pass
     
     # Merge and deduplicate by timestamp
@@ -168,7 +172,7 @@ def parse_equity_wq():
                 eq = entry.get("wq", 0)
                 if ts and eq:
                     points.append({"timestamp": ts, "equity": eq})
-        except:
+        except Exception:
             pass
     seen = set()
     unique = []
@@ -203,7 +207,7 @@ def get_live_positions(tc):
                 "market_value": round(abs(qty) * curr, 2)
             })
         return result
-    except:
+    except Exception:
         return []
 
 def get_live_account(tc):
@@ -217,7 +221,7 @@ def get_live_account(tc):
             "cash": round(float(acct.cash), 2),
             "buying_power": round(float(acct.buying_power), 2)
         }
-    except:
+    except Exception:
         return {"equity": 0, "cash": 0, "buying_power": 0}
 
 def get_changelog():
@@ -237,7 +241,7 @@ def get_news():
             try:
                 data = json.loads(f.read_text())
                 results.append({"bot": name, "data": data})
-            except:
+            except Exception:
                 pass
     return results
 
@@ -269,8 +273,7 @@ def daily_pnl_from_equity(equity_points):
     if not equity_points:
         return {}
     
-    # Get equity per day
-    day_values = {}
+    day_values: dict[str, dict] = {}
     for p in equity_points:
         day = p["timestamp"][:10]
         eq = p["equity"]
@@ -278,9 +281,11 @@ def daily_pnl_from_equity(equity_points):
             day_values[day] = {"first": eq, "last": eq}
         else:
             day_values[day]["last"] = eq
-    
-    # Not enough data yet
-    return {}
+
+    return {
+        day: round(vals["last"] - vals["first"], 2)
+        for day, vals in day_values.items()
+    }
 
 
 @app.get("/api/hermes")
