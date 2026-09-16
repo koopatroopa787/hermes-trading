@@ -406,8 +406,10 @@ def process_bar(symbol: str, bar_data: dict):
     if ref_equity and equity < ref_equity * (1 + DAILY_LOSS_PCT / 100):
         logger.warning(f"🚨 DAILY LOSS LIMIT HIT! Equity: ${equity:.2f} (ref: ${ref_equity:.2f}, threshold: ${ref_equity * (1 + DAILY_LOSS_PCT / 100):.2f})")
         for sym in list(positions.keys()):
-            qty = int(positions[sym]["qty"])
-            submit_order(sym, qty, "sell")
+            raw_qty = float(positions[sym]["qty"])
+            qty = int(abs(raw_qty))
+            side = "buy" if raw_qty < 0 else "sell"
+            submit_order(sym, qty, side)
         logger.warning("All positions closed. Shutting down.")
         os._exit(1)
 
