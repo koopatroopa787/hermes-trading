@@ -111,8 +111,6 @@ def parse_equity_from_logs(bot_dir):
     """Parse equity snapshots from logs."""
     points = []
     log_dir = bot_dir / "logs"
-    if not log_dir.exists():
-        return points
     for log_file in sorted(log_dir.glob("live_trader_ws_*.log")):
         for line in log_file.read_text().split("\n"):
             m = re.search(r"Paper Account:\s+\$?([\d,.]+)", line)
@@ -149,8 +147,6 @@ def parse_equity_wq():
     """Parse WQ Brain equity from logs."""
     points = []
     log_dir = WQ / "logs"
-    if not log_dir.exists():
-        return points
     for log_file in sorted(log_dir.glob("live_trader_ws_*.log")):
         for line in log_file.read_text().split("\n"):
             m = re.search(r"Paper Account:\s+\$?([\d,.]+)", line)
